@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+.board-parent{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.board-row{
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.square {
+    background-color: burlywood;
+    width: 120px;
+    height: 120px;
+    /*解决子元素点击修改value导致父元素高度变化*/
+    float: left;
+    font-size: 60px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.boardStatus{
+    margin-bottom: 20px;
+    text-align: center;
+    color: darkseagreen;
+}
+.restartGame{
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.restartGame button{
+    margin-top: 20px;
+    height: 45px;
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: darkseagreen;
+    color: dimgray;
+}
+.game{
+    position: relative;
+    min-height: 100vh;
+}
+.game-info{
+    position: absolute;
+    bottom: 200px;
+    left: 44%;
+    z-index: 0;
+    height: 230px;
+
+}
+.game-info ol{
+    list-style-type: none;
+    counter-reset: item;
+    padding-left: 0;
+}
+.game-info ol li::before {
+    content: counter(item) '.';
+    counter-increment: item;
+    color: white;
+    margin-right: 0.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-info li button{
+    height: 22px;
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: darkseagreen;
+    color: dimgray;
+    margin-bottom: 5px;
+}
+.siteFoot{
+    position: absolute;
+    bottom: 0;
+    left: 44%;
+    z-index: 0;
 }
